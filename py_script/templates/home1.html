@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Population Data Entry</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+        .header-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .icon {
+            margin-right: 8px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="https://www.worldatlas.com/r/w960-q80/upload/1f/c0/58/shutterstock-579175636.jpg" alt="Population Data Entry" class="header-image mb-4">
+    <h2 class="text-center mb-4">Population Data Entry</h2>
+    <form action="/add" method="post" onsubmit="return check();">
+        <div class="form-group">
+            <label><i class="fas fa-users icon"></i>Current Population:</label>
+            <input type="text" class="form-control" name="cp" pattern="^-?\d*(\.\d+)?$" title="Enter valid float" required>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-city icon"></i>Population Density:</label>
+            <input type="text" class="form-control" name="pd" pattern="^-?\d*(\.\d+)?$" title="Enter valid float" required>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-baby icon"></i>Birth Rate:</label>
+            <input type="text" class="form-control" name="br" pattern="^-?\d*(\.\d+)?$" title="Enter valid float" required>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-skull-crossbones icon"></i>Death Rate:</label>
+            <input type="text" class="form-control" name="dr" pattern="^-?\d*(\.\d+)?$" title="Enter valid float" required>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-plane icon"></i>Immigration Rate:</label>
+            <input type="text" class="form-control" name="ir" pattern="^-?\d*(\.\d+)?$" title="Enter valid float" required>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-briefcase icon"></i>Unemployment Rate:</label>
+            <input type="text" class="form-control" name="ur" pattern="^-?\d*(\.\d+)?$" title="Enter valid float" required>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-dollar-sign icon"></i>Average Income:</label>
+            <input type="text" class="form-control" name="ai" pattern="^-?\d*(\.\d+)?$" title="Enter valid float" required>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-graduation-cap icon"></i>Education Level:</label>
+            <select class="form-control" name="el" id="id1" required>
+                <option value="0">Select an option</option>
+                <option value="1">High School</option>
+                <option value="2">Bachelor</option>
+                <option value="3">PhD</option>
+                <option value="4">Master</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-hospital icon"></i>Healthcare Access:</label>
+            <input type="text" class="form-control" name="ha" pattern="^-?\d*(\.\d+)?$" title="Enter valid float" required>
+        </div>
+        <div class="form-group">
+            <label><i class="fas fa-shield-alt icon"></i>Crime Rate:</label>
+            <input type="text" class="form-control" name="cr" pattern="^-?\d*(\.\d+)?$" title="Enter valid float" required>
+        </div>
+        <button type="submit" class="btn btn-custom btn-block">Submit</button>
+    </form>
+</div>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    function check() {
+        var vl = document.getElementById('id1').value;
+        if (vl == 0) {
+            window.alert('Select an option for Education Level');
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
+
+</body>
+</html>
